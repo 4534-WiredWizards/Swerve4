@@ -23,6 +23,9 @@ import frc.robot.subsystems.DriveSubsystem;
 import frc.robot.subsystems.IntakeSubsystem;
 import frc.robot.subsystems.Limelight;
 import frc.robot.subsystems.ShooterSubsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.kinematics.SwerveModuleState;
+
 
 public class RobotContainer {
 
@@ -30,9 +33,10 @@ public class RobotContainer {
      * Establishes the controls and subsystems of the robot
      */
 
-    private final Joystick leftJoystick = new Joystick(InputDevices.leftJoystickPort);
-    private final Joystick rightJoystick = new Joystick(InputDevices.rightJoystickPort);
+ //   private final Joystick leftJoystick = new Joystick(InputDevices.leftJoystickPort);
+ //   private final Joystick rightJoystick = new Joystick(InputDevices.rightJoystickPort);
 
+    private final XboxController GMDJoystick = new XboxController(InputDevices.leftJoystickPort);
     private final XboxController gamepad = new XboxController(InputDevices.gamepadPort);
 
     private DriveSubsystem drive = new DriveSubsystem();
@@ -46,9 +50,10 @@ public class RobotContainer {
         drive.setDefaultCommand(
             new OperatorControl(
                 drive, 
-                () -> leftJoystick.getY(GenericHID.Hand.kLeft), 
-                () -> leftJoystick.getX(GenericHID.Hand.kLeft), 
-                () -> rightJoystick.getX(GenericHID.Hand.kRight),
+                () -> GMDJoystick.getY(GenericHID.Hand.kLeft), 
+                () -> GMDJoystick.getX(GenericHID.Hand.kLeft), 
+        //NOTE: Greg's Right X controller is on Axis 2
+                () -> GMDJoystick.getRawAxis(2),
                 true
             )
         );
@@ -63,6 +68,26 @@ public class RobotContainer {
 
         configureButtonBindings();
 
+    }
+
+    public void updateShuffleBoard() {
+
+        SwerveModuleState[] tempStates; 
+
+        SmartDashboard.putNumber("Left  Y Joy", GMDJoystick.getY(GenericHID.Hand.kLeft));
+        SmartDashboard.putNumber("Left  X Joy", GMDJoystick.getX(GenericHID.Hand.kLeft));
+        //NOTE: Greg's Right X controller is on Axis 2
+        SmartDashboard.putNumber("Right X Joy", GMDJoystick.getRawAxis(2));
+
+        tempStates = drive.getModuleStates();
+        SmartDashboard.putNumber("CANcoder S7 FL", tempStates[2].angle.getDegrees());
+        SmartDashboard.putNumber("CANcoder S1 FR", tempStates[0].angle.getDegrees());
+        SmartDashboard.putNumber("CANcoder S6 RL", tempStates[3].angle.getDegrees());
+        SmartDashboard.putNumber("CANcoder S3 RR", tempStates[1].angle.getDegrees());
+        SmartDashboard.putNumber("CANcoder D8 FL", tempStates[2].speedMetersPerSecond);
+        SmartDashboard.putNumber("CANcoder D2 FR", tempStates[0].speedMetersPerSecond);
+        SmartDashboard.putNumber("CANcoder D5 RL", tempStates[3].speedMetersPerSecond);
+        SmartDashboard.putNumber("CANcoder D4 RR", tempStates[1].speedMetersPerSecond);
     }
 
     public void configureButtonBindings() {
@@ -146,21 +171,21 @@ public class RobotContainer {
             )
             .whenReleased(new InstantCommand(shooter::stopShooter));
 
-        // align with vision
-        new JoystickButton(leftJoystick, Joystick.ButtonType.kTop.value)
-            .whileHeld(new AlignWithTargetVision(drive, limelight));
+        // // align with vision
+        // new JoystickButton(GMDJoystick, Joystick.ButtonType.kTop.value)
+        //     .whileHeld(new AlignWithTargetVision(drive, limelight));
 
-        // align with 0 degrees
-        new JoystickButton(rightJoystick, Joystick.ButtonType.kTrigger.value)
-            .whileHeld(new QuickTurn(drive, Math.PI));
+        // // align with 0 degrees
+        // new JoystickButton(GMDJoystick, Joystick.ButtonType.kTrigger.value)
+        //     .whileHeld(new QuickTurn(drive, Math.PI));
 
-        // align with 180 degrees
-        new JoystickButton(leftJoystick, Joystick.ButtonType.kTrigger.value) 
-            .whileHeld(new QuickTurn(drive, 0));
+        // // align with 180 degrees
+        // new JoystickButton(GMDJoystick, Joystick.ButtonType.kTrigger.value) 
+        //     .whileHeld(new QuickTurn(drive, 0));
 
-        // reset imu 
-        new JoystickButton(rightJoystick, 3)
-            .whenPressed(new InstantCommand(drive::resetImu));
+        // // reset imu 
+        // new JoystickButton(GMDJoystick, 3)
+        //     .whenPressed(new InstantCommand(drive::resetImu));
 
         // toggle hood
         /*new JoystickButton(rightJoystick, Joystick.ButtonType.kTop.value)
