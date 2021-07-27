@@ -12,6 +12,8 @@ import edu.wpi.first.wpilibj.kinematics.SwerveModuleState;
 import edu.wpi.first.wpilibj.util.Units;
 import frc.robot.Constants.CANDevices;
 import frc.robot.Constants.DriveConstants;
+import com.kauailabs.navx.frc.AHRS;
+import com.kauailabs.navx.frc.AHRS.SerialDataType;
 
 public class DriveSubsystem extends SubsystemBase {
 
@@ -77,7 +79,9 @@ public class DriveSubsystem extends SubsystemBase {
 
     private boolean isCommandedFieldRelative = false;
 
-    private final PigeonIMU imu = new PigeonIMU(CANDevices.imuId);
+    //private final PigeonIMU imu = new PigeonIMU(CANDevices.imuId);
+
+    public AHRS ahrs = new AHRS();
 
     /**
      * odometry for the robot, measured in meters for linear motion and radians for rotational motion
@@ -91,7 +95,7 @@ public class DriveSubsystem extends SubsystemBase {
 
     public DriveSubsystem() {
 
-        imu.setYaw(0.0);
+        ahrs.zeroYaw();
 
         // initialize the rotation offsets for the CANCoders
         frontLeft.initRotationOffset();
@@ -194,7 +198,7 @@ public class DriveSubsystem extends SubsystemBase {
     // reset the current pose to a desired pose
     public void resetPose(Pose2d pose) {
 
-        imu.setYaw(0);
+        ahrs.zeroYaw();
         odometry.resetPosition(pose, getHeading());
 
     }
@@ -236,7 +240,7 @@ public class DriveSubsystem extends SubsystemBase {
 
         double[] ypr = new double[3];
 
-        imu.getYawPitchRoll(ypr);
+        ahrs.getAngle();
 
         return Rotation2d.fromDegrees(ypr[0]);
 
@@ -258,7 +262,7 @@ public class DriveSubsystem extends SubsystemBase {
 
     public void resetImu() {
 
-        imu.setYaw(0);
+        ahrs.zeroYaw();
 
     }
 

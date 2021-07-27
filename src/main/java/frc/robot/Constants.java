@@ -9,25 +9,25 @@ public class Constants {
 
     public static final class CANDevices {
 
-        public static final int frontLeftRotationMotorId = 7;
-        public static final int frontLeftDriveMotorId = 8;
+        public static final int frontLeftRotationMotorId = 16;
+        public static final int frontLeftDriveMotorId = 17;
 
-        public static final int frontRightRotationMotorId = 1;
-        public static final int frontRightDriveMotorId = 2;
+        public static final int frontRightRotationMotorId = 10;
+        public static final int frontRightDriveMotorId = 11;
 
-        public static final int rearLeftRotationMotorId = 6;
-        public static final int rearLeftDriveMotorId = 5;
+        public static final int rearLeftRotationMotorId = 14;
+        public static final int rearLeftDriveMotorId = 15;
 
-        public static final int rearRightRotationMotorId = 3;
-        public static final int rearRightDriveMotorId = 4;
+        public static final int rearRightRotationMotorId = 12;
+        public static final int rearRightDriveMotorId = 13;
 
         public static final int leftClimberMotorId = 20;
         public static final int rightClimberMotorId = 21;
 
-        public static final int frontLeftRotationEncoderId = 17;
-        public static final int frontRightRotationEncoderId = 13;
-        public static final int rearLeftRotationEncoderId = 15;
-        public static final int rearRightRotationEncoderId = 14;
+        public static final int frontLeftRotationEncoderId = 49;
+        public static final int frontRightRotationEncoderId = 19;
+        public static final int rearLeftRotationEncoderId = 39;
+        public static final int rearRightRotationEncoderId = 29;
 
         public static final int rightFlywheelMotorId = 12;
         public static final int leftFlywheelMotorId = 11;
