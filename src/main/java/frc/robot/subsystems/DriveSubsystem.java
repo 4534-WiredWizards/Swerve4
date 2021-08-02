@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.kinematics.ChassisSpeeds;
 import edu.wpi.first.wpilibj.kinematics.SwerveDriveKinematics;
 import edu.wpi.first.wpilibj.kinematics.SwerveDriveOdometry;
 import edu.wpi.first.wpilibj.kinematics.SwerveModuleState;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.util.Units;
 import frc.robot.Constants.CANDevices;
 import frc.robot.Constants.DriveConstants;
@@ -26,10 +27,10 @@ public class DriveSubsystem extends SubsystemBase {
      * absolute encoder offsets for the wheels
      * 180 degrees added to offset values to invert one side of the robot so that it doesn't spin in place
      */
-    private static final double frontLeftAngleOffset = Units.degreesToRadians(239.5);
-    private static final double frontRightAngleOffset = Units.degreesToRadians(256.7 + 180);
-    private static final double rearLeftAngleOffset = Units.degreesToRadians(322.8);
-    private static final double rearRightAngleOffset = Units.degreesToRadians(180.0 + 180);
+    private static final double frontLeftAngleOffset = Units.degreesToRadians(24.17);
+    private static final double frontRightAngleOffset = Units.degreesToRadians(118.4);
+    private static final double rearLeftAngleOffset = Units.degreesToRadians(120.5);
+    private static final double rearRightAngleOffset = Units.degreesToRadians(36.65);
 
     /**
      * SwerveModule objects
@@ -264,6 +265,14 @@ public class DriveSubsystem extends SubsystemBase {
 
         ahrs.zeroYaw();
 
+    }
+
+    public void updateSmartDashboard(){
+        
+    SmartDashboard.putNumber("Front Left Angle: ", frontLeft.getCanCoderRawAngle());
+    SmartDashboard.putNumber("Front Right Angle: ", frontRight.getCanCoderRawAngle());
+    SmartDashboard.putNumber("Back Left Angle: ", rearLeft.getCanCoderRawAngle());
+    SmartDashboard.putNumber("Back Right Angle: ", rearRight.getCanCoderRawAngle());
     }
 
 }

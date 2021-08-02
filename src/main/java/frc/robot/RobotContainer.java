@@ -33,7 +33,7 @@ public class RobotContainer {
     private final XboxController GMDJoystick = new XboxController(InputDevices.leftJoystickPort);
     private final XboxController gamepad = new XboxController(InputDevices.gamepadPort);
 
-    private DriveSubsystem drive = new DriveSubsystem();
+    public DriveSubsystem drive = new DriveSubsystem();
     
     public RobotContainer() {
         //callibrates joysticks
@@ -43,7 +43,7 @@ public class RobotContainer {
                 () -> GMDJoystick.getY(GenericHID.Hand.kLeft), 
                 () -> GMDJoystick.getX(GenericHID.Hand.kLeft), 
         //NOTE: Greg's Right X controller is on Axis 2
-                () -> GMDJoystick.getRawAxis(2),
+                () -> GMDJoystick.getRawAxis(4),
                 true
             )
         );

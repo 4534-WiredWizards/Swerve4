@@ -84,13 +84,13 @@ public class Constants {
 
         public static final double wheelDiameterMeters = 0.050686 * 2;
 
-        public static final double rotationMotorMaxSpeedRadPerSec = 1.0;
+        public static final double rotationMotorMaxSpeedRadPerSec = .25; //1.0;
         public static final double rotationMotorMaxAccelRadPerSecSq = 1.0;
 
         public static final SimpleMotorFeedforward driveFF = new SimpleMotorFeedforward(0.254, 0.137);
 
-        public static final double maxDriveSpeed = 14.4;
-        public static final double teleopTurnRateDegPerSec = 360.0; //Rate the robot will spin with full rotation command
+        public static final double maxDriveSpeed = 4; //14.4;
+        public static final double teleopTurnRateDegPerSec = 90; //360.0; //Rate the robot will spin with full rotation command
 
     }
 

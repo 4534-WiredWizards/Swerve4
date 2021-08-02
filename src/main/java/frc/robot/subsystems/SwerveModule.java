@@ -114,6 +114,14 @@ public class SwerveModule extends SubsystemBase {
 
     }
 
+    public double getCanCoderRawAngle() {
+
+        double unsignedAngle = (canCoder.getAbsolutePosition());
+
+        return (unsignedAngle);
+
+    }
+
     public Rotation2d getCanEncoderAngle() {
 
         double unsignedAngle = rotationEncoder.getPosition() % (2 * Math.PI);
