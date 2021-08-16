@@ -68,8 +68,8 @@ public class Constants {
 
     public static final class DriveConstants {
 
-        public static final double trackWidth = Units.inchesToMeters(16.5);
-        public static final double wheelBase = Units.inchesToMeters(16.5);
+        public static final double trackWidth = Units.inchesToMeters(17.25);
+        public static final double wheelBase = Units.inchesToMeters(28.5);
 
         public static final SwerveDriveKinematics kinematics = 
             new SwerveDriveKinematics(

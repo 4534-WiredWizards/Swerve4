@@ -20,6 +20,7 @@ import frc.robot.commands.drivetrain.OperatorControl;
 import frc.robot.subsystems.DriveSubsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.kinematics.SwerveModuleState;
+import frc.robot.commands.drivetrain.ChooseMotor;
 
 public class RobotContainer {
 
@@ -116,6 +117,10 @@ public class RobotContainer {
         drive.resetPose(AutoTrajectories.testTrajectory.getInitialPose());
         return new FollowTrajectory(drive, AutoTrajectories.testTrajectory);
 
+    }
+
+    public Command getTestCommand() {
+        return new ChooseMotor().motorChooser.getSelected();
     }
 
 }
