@@ -27,10 +27,10 @@ public class DriveSubsystem extends SubsystemBase {
      * absolute encoder offsets for the wheels
      * 180 degrees added to offset values to invert one side of the robot so that it doesn't spin in place
      */
-    private static final double frontLeftAngleOffset = Units.degreesToRadians(24.17);
-    private static final double frontRightAngleOffset = Units.degreesToRadians(118.4);
-    private static final double rearLeftAngleOffset = Units.degreesToRadians(120.5);
-    private static final double rearRightAngleOffset = Units.degreesToRadians(36.65);
+    private static final double frontLeftAngleOffset = Units.degreesToRadians(22.7);
+    private static final double frontRightAngleOffset = Units.degreesToRadians(115.05);
+    private static final double rearLeftAngleOffset = Units.degreesToRadians(109.0);
+    private static final double rearRightAngleOffset = Units.degreesToRadians(36.9);
 
     /**
      * SwerveModule objects

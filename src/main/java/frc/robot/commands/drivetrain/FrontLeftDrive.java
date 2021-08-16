@@ -18,7 +18,8 @@ public class FrontLeftDrive extends CommandBase{
     public FrontLeftDrive(){
         motor = new CANSparkMax(CANDevices.frontLeftDriveMotorId, MotorType.kBrushless);
         encoder = motor.getEncoder();
-        motor.setIdleMode(IdleMode.kBrake);
+        motor.setIdleMode(IdleMode.kCoast);
+        //motor.setIdleMode(IdleMode.kBrake);
         controller = motor.getPIDController();
         controller.setP(drivekP);
     }

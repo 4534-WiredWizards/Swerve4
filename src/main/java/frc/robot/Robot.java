@@ -44,4 +44,14 @@ public class Robot extends TimedRobot {
 
     }
 
+    @Override
+    public void testInit() {
+        robotContainer.getTestCommand();
+    }
+
+    @Override
+    public void testPeriodic() {
+        
+    }
+
 }
