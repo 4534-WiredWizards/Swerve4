@@ -241,7 +241,7 @@ public class DriveSubsystem extends SubsystemBase {
 
         double[] ypr = new double[3];
 
-        ahrs.getAngle();
+        ypr[0] = 0-ahrs.getAngle();
 
         return Rotation2d.fromDegrees(ypr[0]);
 
