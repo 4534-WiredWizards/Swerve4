@@ -68,7 +68,7 @@ public class SwerveModule extends SubsystemBase {
         driveMotor.setIdleMode(IdleMode.kBrake);
         //Used to be kBrake
 
-        rotationMotor.setIdleMode(IdleMode.kBrake);
+        rotationMotor.setIdleMode(IdleMode.kCoast);
         //Used to be kCoast
 
         rotationController = rotationMotor.getPIDController();

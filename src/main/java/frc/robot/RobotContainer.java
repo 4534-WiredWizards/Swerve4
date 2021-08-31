@@ -20,6 +20,7 @@ import frc.robot.commands.drivetrain.OperatorControl;
 import frc.robot.subsystems.DriveSubsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.kinematics.SwerveModuleState;
+import frc.robot.commands.resetGyro;
 import frc.robot.commands.drivetrain.ChooseMotor;
 
 public class RobotContainer {
@@ -86,7 +87,11 @@ public class RobotContainer {
         new JoystickButton(gamepad, Button.kBumperRight.value)
             .whenPressed(new RampUpWithVision(shooter, limelight));
         */
-
+        new JoystickButton(GMDJoystick, XboxController.Button.kY) 
+            .whileHeld(new resetGyro(drive));
+            //!!!!!!!!!!!!!!!!!!!!fix this !!!!!!!!!!!!!!!!!!!
+            //joystick button does not like xbox controller!!!!!!!!!!!!!!!!!!!!!!!
+    
 
         // // align with vision
         // new JoystickButton(GMDJoystick, Joystick.ButtonType.kTop.value)

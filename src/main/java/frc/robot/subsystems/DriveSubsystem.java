@@ -78,7 +78,7 @@ public class DriveSubsystem extends SubsystemBase {
     private double commandedStrafe = 0;
     private double commandedRotation = 0;
 
-    private boolean isCommandedFieldRelative = false;
+    private boolean isCommandedFieldRelative = true;
 
     //private final PigeonIMU imu = new PigeonIMU(CANDevices.imuId);
 
@@ -264,7 +264,6 @@ public class DriveSubsystem extends SubsystemBase {
     public void resetImu() {
 
         ahrs.zeroYaw();
-
     }
 
     public void updateSmartDashboard(){
