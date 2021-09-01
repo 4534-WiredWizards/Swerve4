@@ -87,7 +87,7 @@ public class RobotContainer {
         new JoystickButton(gamepad, Button.kBumperRight.value)
             .whenPressed(new RampUpWithVision(shooter, limelight));
         */
-        new JoystickButton(GMDJoystick, XboxController.Button.kY) 
+        new JoystickButton(GMDJoystick, 4) //XboxController.Button.kY
             .whileHeld(new resetGyro(drive));
             //!!!!!!!!!!!!!!!!!!!!fix this !!!!!!!!!!!!!!!!!!!
             //joystick button does not like xbox controller!!!!!!!!!!!!!!!!!!!!!!!
