@@ -177,14 +177,16 @@ public class SwerveModule extends SubsystemBase {
      * Uses PID and a feedforward to control the output
      */
     public void setDesiredStateClosedLoop(SwerveModuleState desiredState) {
-        
         SwerveModuleState state = desiredState;
-        rotationController.setReference(
-            calculateAdjustedAngle(
-                state.angle.getRadians(),
-                rotationEncoder.getPosition()),
-            ControlType.kPosition
-        );
+        if (desiredState.speedMetersPerSecond != 0) {
+            rotationController.setReference(
+                calculateAdjustedAngle(
+                    state.angle.getRadians(),
+                    rotationEncoder.getPosition()),
+                ControlType.kPosition
+            );
+        }
+       
 
         double speedRadPerSec = desiredState.speedMetersPerSecond / (DriveConstants.wheelDiameterMeters / 2);
 
