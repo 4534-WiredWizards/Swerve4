@@ -89,8 +89,8 @@ public class Constants {
 
         public static final SimpleMotorFeedforward driveFF = new SimpleMotorFeedforward(0.254, 0.137);
 
-        public static final double maxDriveSpeed = 4; //14.4;  4
-        public static final double teleopTurnRateDegPerSec = 90; //360.0;  90 //Rate the robot will spin with full rotation command
+        public static final double maxDriveSpeed =6; //14.4;  4
+        public static final double teleopTurnRateDegPerSec = 180; //360.0;  90 //Rate the robot will spin with full rotation command
 
     }
 

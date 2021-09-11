@@ -1,5 +1,6 @@
 package frc.robot;
 
+import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -19,6 +20,7 @@ public class Robot extends TimedRobot {
         NetworkTableInstance.getDefault().setUpdateRate(.01);
         //Added to speed up auto running
         new AutoTrajectories();
+        CameraServer.getInstance().startAutomaticCapture();
     }
 
     @Override
