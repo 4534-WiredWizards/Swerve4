@@ -58,6 +58,9 @@ public class SwerveModule extends SubsystemBase {
         driveMotor = new CANSparkMax(driveMotorId, MotorType.kBrushless);
         rotationMotor = new CANSparkMax(rotationMotorId, MotorType.kBrushless);
 
+        driveMotor.restoreFactoryDefaults();
+        rotationMotor.restoreFactoryDefaults();
+
         driveEncoder = driveMotor.getEncoder();
         rotationEncoder = rotationMotor.getEncoder();
 
@@ -94,6 +97,9 @@ public class SwerveModule extends SubsystemBase {
 
         //configure the CANCoder to output in unsigned (wrap around from 360 to 0 degrees)
         canCoder.configAbsoluteSensorRange(AbsoluteSensorRange.Unsigned_0_to_360);
+
+        driveMotor.setClosedLoopRampRate(0.15);
+        rotationMotor.setClosedLoopRampRate(0.15);
 
     }
 

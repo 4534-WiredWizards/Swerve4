@@ -18,8 +18,10 @@ import frc.robot.commands.drivetrain.OperatorControl;
 //import frc.robot.commands.superstructure.Indexing.Waiting;
 //import frc.robot.commands.superstructure.shooting.RampUpWithVision;
 import frc.robot.subsystems.DriveSubsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.kinematics.SwerveModuleState;
+import frc.robot.commands.ChooseAuto;
 import frc.robot.commands.resetGyro;
 import frc.robot.commands.drivetrain.ChooseMotor;
 
@@ -34,6 +36,10 @@ public class RobotContainer {
 
     private final XboxController GMDJoystick = new XboxController(InputDevices.leftJoystickPort);
     private final XboxController gamepad = new XboxController(InputDevices.gamepadPort);
+
+    SendableChooser<Command> chooser = new SendableChooser<>();
+
+    //chooser.simpleDrive("Simple Drive", simpleDrive)
 
     public DriveSubsystem drive = new DriveSubsystem();
     
@@ -120,12 +126,14 @@ public class RobotContainer {
     public Command getAutonomousCommand() {
 
         drive.resetPose(AutoTrajectories.testTrajectory.getInitialPose());
-        return new FollowTrajectory(drive, AutoTrajectories.testTrajectory);
+        //return new FollowTrajectory(drive, AutoTrajectories.testTrajectory);
+        return new ChooseAuto().autoChooser.getSelected();
 
     }
 
     public Command getTestCommand() {
         return new ChooseMotor().motorChooser.getSelected();
     }
+
 
 }
