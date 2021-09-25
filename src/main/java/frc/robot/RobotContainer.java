@@ -23,6 +23,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.kinematics.SwerveModuleState;
 import frc.robot.commands.ChooseAuto;
 import frc.robot.commands.resetGyro;
+import frc.robot.commands.simpleDrive;
 import frc.robot.commands.drivetrain.ChooseMotor;
 
 public class RobotContainer {
@@ -127,7 +128,7 @@ public class RobotContainer {
 
         drive.resetPose(AutoTrajectories.testTrajectory.getInitialPose());
         //return new FollowTrajectory(drive, AutoTrajectories.testTrajectory);
-        return new ChooseAuto().autoChooser.getSelected();
+        return new simpleDrive(); //ChooseAuto().autoChooser.getSelected(); 
 
     }
 
