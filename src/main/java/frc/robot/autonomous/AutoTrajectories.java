@@ -130,6 +130,21 @@ public class AutoTrajectories {
             config
     );
 
+    public static Trajectory practiceTrajectory = 
+        TrajectoryGenerator.generateTrajectory(
+            new Pose2d(Units.inchesToMeters(0), Units.inchesToMeters(0), new Rotation2d(0)),
+            List.of(
+                new Translation2d(Units.inchesToMeters(60), new Rotation2d(0)),
+                new Translation2d(Units.inchesToMeters(60), new Rotation2d(-90)),
+                new Translation2d(Units.inchesToMeters(60), new Rotation2d(-90))
+                //new Translation2d(Units.inchesToMeters(0), Units.inchesToMeters(60)),
+                //new Translation2d(Units.inchesToMeters(60), Units.inchesToMeters(60)),
+                //new Translation2d(Units.inchesToMeters(60), Units.inchesToMeters(0)),
+            ),
+            new Pose2d(Units.inchesToMeters(60), Units.inchesToMeters(0), new Rotation2d(180)),
+            config
+    );
+
     /*For competition - Being across from shooter (on right looking at it) and going backwards to collect
       Steps are to shoot 3x, and then turn around and go backwards, collecting the balls while moving
     public static Trajectory acrossFromShooterAndCollect = 

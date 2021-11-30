@@ -124,13 +124,13 @@ public class RobotContainer {
 
     }
 
-    /*public Command getAutonomousCommand() {
+    public Command getAutonomousCommand() {
 
         drive.resetPose(AutoTrajectories.testTrajectory.getInitialPose());
-        //return new FollowTrajectory(drive, AutoTrajectories.testTrajectory);
-        return new simpleDrive(); //ChooseAuto().autoChooser.getSelected(); 
+        return new FollowTrajectory(drive, AutoTrajectories.practiceTrajectory);
+        //return new simpleDrive(); //ChooseAuto().autoChooser.getSelected(); 
 
-    }*/
+    }
 
     public Command getTestCommand() {
         return new ChooseMotor().motorChooser.getSelected();
