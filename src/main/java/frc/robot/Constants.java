@@ -85,8 +85,8 @@ public class Constants {
                 new Translation2d(-trackWidth / 2.0, -wheelBase / 2.0) //rear right
             );
 
-        public static final double driveWheelGearReduction = 6.86;
-        public static final double rotationWheelGearReduction = 12.8;
+        public static final double driveWheelGearReduction = 8.14; //6.86 for MK3
+        public static final double rotationWheelGearReduction = 12.8; //12.8 for MK3
 
         public static final double wheelDiameterMeters = 0.050686 * 2;
 
