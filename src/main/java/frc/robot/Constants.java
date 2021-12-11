@@ -24,15 +24,15 @@ public class Constants {
         public static final int leftClimberMotorId = 20;
         public static final int rightClimberMotorId = 21;
 
-        public static final int frontLeftRotationEncoderId = 49;
-        public static final int frontRightRotationEncoderId = 19;
-        public static final int rearLeftRotationEncoderId = 39;
+        public static final int frontLeftRotationEncoderId = 39;
+        public static final int frontRightRotationEncoderId = 49;
+        public static final int rearLeftRotationEncoderId = 19;
         public static final int rearRightRotationEncoderId = 29;
 
-        public static final double frontLeftAngleOffset = Units.degreesToRadians(22.0);
-        public static final double frontRightAngleOffset = Units.degreesToRadians(114.34);
-        public static final double rearLeftAngleOffset = Units.degreesToRadians(109.1);
-        public static final double rearRightAngleOffset = Units.degreesToRadians(37.7);
+        public static final double frontLeftAngleOffset = Units.degreesToRadians(26.72);  //26.60    //26.71
+        public static final double frontRightAngleOffset = Units.degreesToRadians(111.35);  //111.18   //111.44
+        public static final double rearLeftAngleOffset = Units.degreesToRadians(109.6);  //108.98    //109.50
+        public static final double rearRightAngleOffset = Units.degreesToRadians(37.09);  //37.00     //37.00
     
 
         public static final int rightFlywheelMotorId = 12;
@@ -95,7 +95,7 @@ public class Constants {
 
         public static final SimpleMotorFeedforward driveFF = new SimpleMotorFeedforward(0.254, 0.137);
 
-        public static final double maxDriveSpeed =4; //14.4;  4   6
+        public static final double maxDriveSpeed = 1; //14.4;  4   6
         public static final double teleopTurnRateDegPerSec = 120; //360.0;  was at 90 but we lowered because it was very bumpy
                                                                  // 45 worked but was too slow :(    //Rate the robot will spin with full rotation command
 

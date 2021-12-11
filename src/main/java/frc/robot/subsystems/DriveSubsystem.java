@@ -17,6 +17,7 @@ import frc.robot.Constants.DriveConstants;
 import com.kauailabs.navx.frc.AHRS;
 import com.kauailabs.navx.frc.AHRS.SerialDataType;
 
+
 public class DriveSubsystem extends SubsystemBase {
 
     /**
@@ -28,10 +29,10 @@ public class DriveSubsystem extends SubsystemBase {
      * absolute encoder offsets for the wheels
      * 180 degrees added to offset values to invert one side of the robot so that it doesn't spin in place
      */
-    private static final double frontLeftAngleOffset = Units.degreesToRadians(22.0);
-    private static final double frontRightAngleOffset = Units.degreesToRadians(114.34);
-    private static final double rearLeftAngleOffset = Units.degreesToRadians(109.1);
-    private static final double rearRightAngleOffset = Units.degreesToRadians(37.7);
+    //private static final double frontLeftAngleOffset = Units.degreesToRadians(22.0);
+    //private static final double frontRightAngleOffset = Units.degreesToRadians(114.34);
+    //private static final double rearLeftAngleOffset = Units.degreesToRadians(109.1);
+    //private static final double rearRightAngleOffset = Units.degreesToRadians(37.7);
 
     /**
      * SwerveModule objects
@@ -47,7 +48,7 @@ public class DriveSubsystem extends SubsystemBase {
             CANDevices.frontLeftDriveMotorId,
             CANDevices.frontLeftRotationMotorId,
             CANDevices.frontLeftRotationEncoderId,
-            frontLeftAngleOffset
+            CANDevices.frontLeftAngleOffset
         );
 
     private final SwerveModule frontRight = 
@@ -55,7 +56,7 @@ public class DriveSubsystem extends SubsystemBase {
             CANDevices.frontRightDriveMotorId,
             CANDevices.frontRightRotationMotorId,
             CANDevices.frontRightRotationEncoderId,
-            frontRightAngleOffset
+            CANDevices.frontRightAngleOffset
         );
 
     private final SwerveModule rearLeft = 
@@ -63,7 +64,7 @@ public class DriveSubsystem extends SubsystemBase {
             CANDevices.rearLeftDriveMotorId,
             CANDevices.rearLeftRotationMotorId,
             CANDevices.rearLeftRotationEncoderId,
-            rearLeftAngleOffset
+            CANDevices.rearLeftAngleOffset
         );
 
     private final SwerveModule rearRight = 
@@ -71,7 +72,7 @@ public class DriveSubsystem extends SubsystemBase {
             CANDevices.rearRightDriveMotorId,
             CANDevices.rearRightRotationMotorId,
             CANDevices.rearRightRotationEncoderId,
-            rearRightAngleOffset
+            CANDevices.rearRightAngleOffset
         );
 
     // commanded values from the joysticks and field relative value to use in AlignWithTargetVision and AlignWithGyro
@@ -243,7 +244,7 @@ public class DriveSubsystem extends SubsystemBase {
 
         double[] ypr = new double[3];
 
-        ypr[0] = 0-ahrs.getAngle() +180;
+        ypr[0] = 0-ahrs.getAngle();
 
         return Rotation2d.fromDegrees(ypr[0]);
 
