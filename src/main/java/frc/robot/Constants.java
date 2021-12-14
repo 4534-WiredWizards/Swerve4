@@ -9,17 +9,17 @@ public class Constants {
 
     public static final class CANDevices {
 
-        public static final int frontLeftRotationMotorId = 16;
-        public static final int frontLeftDriveMotorId = 17;
+        public static final int frontLeftRotationMotorId = 12;
+        public static final int frontLeftDriveMotorId = 13;
 
-        public static final int frontRightRotationMotorId = 10;
-        public static final int frontRightDriveMotorId = 11;
+        public static final int frontRightRotationMotorId = 14;
+        public static final int frontRightDriveMotorId = 15;
 
-        public static final int rearLeftRotationMotorId = 14;
-        public static final int rearLeftDriveMotorId = 15;
+        public static final int rearLeftRotationMotorId = 10;
+        public static final int rearLeftDriveMotorId = 11;
 
-        public static final int rearRightRotationMotorId = 12;
-        public static final int rearRightDriveMotorId = 13;
+        public static final int rearRightRotationMotorId = 16;
+        public static final int rearRightDriveMotorId = 17;
 
         public static final int leftClimberMotorId = 20;
         public static final int rightClimberMotorId = 21;
