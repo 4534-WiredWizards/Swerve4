@@ -31,7 +31,7 @@ public class Constants {
 
         public static final double frontLeftAngleOffset = Units.degreesToRadians(26.72);  //26.60    //26.71
         public static final double frontRightAngleOffset = Units.degreesToRadians(111.35);  //111.18   //111.44
-        public static final double rearLeftAngleOffset = Units.degreesToRadians(109.6);  //108.98    //109.50
+        public static final double rearLeftAngleOffset = Units.degreesToRadians(111.0);  //108.98    //109.60
         public static final double rearRightAngleOffset = Units.degreesToRadians(37.09);  //37.00     //37.00
     
 

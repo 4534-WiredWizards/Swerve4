@@ -126,6 +126,7 @@ public class RobotContainer {
 
     public Command getAutonomousCommand() {
 
+        SmartDashboard.putNumber("Initialized", 1);
         drive.resetPose(AutoTrajectories.testTrajectory.getInitialPose());
         return new FollowTrajectory(drive, AutoTrajectories.practiceTrajectory);
         //return new simpleDrive(); //ChooseAuto().autoChooser.getSelected(); 

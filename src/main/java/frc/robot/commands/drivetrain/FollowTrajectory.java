@@ -82,6 +82,7 @@ public class FollowTrajectory extends SwerveControllerCommand {
         timer.reset();
         timer.start();
         super.initialize();
+        //SmartDashboard.putNumber("Initialized", 1);
     } 
 
     @Override
