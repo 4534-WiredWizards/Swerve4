@@ -52,7 +52,7 @@ public class RobotContainer {
                 () -> GMDJoystick.getY(GenericHID.Hand.kLeft), 
                 () -> GMDJoystick.getX(GenericHID.Hand.kLeft), 
         //NOTE: Greg's Right X controller is on Axis 2
-                () -> GMDJoystick.getRawAxis(4),
+                () -> GMDJoystick.getRawAxis(3),
                 true
             )
         );
