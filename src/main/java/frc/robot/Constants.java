@@ -9,30 +9,30 @@ public class Constants {
 
     public static final class CANDevices {
 
-        public static final int frontLeftRotationMotorId = 12;
-        public static final int frontLeftDriveMotorId = 13;
+        public static final int frontLeftRotationMotorId = 11; //12
+        public static final int frontLeftDriveMotorId = 10; //13
 
-        public static final int frontRightRotationMotorId = 14;
-        public static final int frontRightDriveMotorId = 15;
+        public static final int frontRightRotationMotorId = 21; //14
+        public static final int frontRightDriveMotorId = 20; //15
 
-        public static final int rearLeftRotationMotorId = 10;
-        public static final int rearLeftDriveMotorId = 11;
+        public static final int rearLeftRotationMotorId = 31; //10
+        public static final int rearLeftDriveMotorId = 30; //11
 
-        public static final int rearRightRotationMotorId = 16;
-        public static final int rearRightDriveMotorId = 17;
+        public static final int rearRightRotationMotorId = 41; //16
+        public static final int rearRightDriveMotorId = 40; //17
 
         public static final int leftClimberMotorId = 20;
         public static final int rightClimberMotorId = 21;
 
-        public static final int frontLeftRotationEncoderId = 39;
-        public static final int frontRightRotationEncoderId = 49;
-        public static final int rearLeftRotationEncoderId = 19;
-        public static final int rearRightRotationEncoderId = 29;
+        public static final int frontLeftRotationEncoderId = 39; //39
+        public static final int frontRightRotationEncoderId = 49; //49
+        public static final int rearLeftRotationEncoderId = 19; //19
+        public static final int rearRightRotationEncoderId = 29; //22
 
-        public static final double frontLeftAngleOffset = Units.degreesToRadians(26.72);  //26.60    //26.71
-        public static final double frontRightAngleOffset = Units.degreesToRadians(111.35);  //111.18   //111.44
-        public static final double rearLeftAngleOffset = Units.degreesToRadians(111.0);  //108.98    //109.60
-        public static final double rearRightAngleOffset = Units.degreesToRadians(37.09);  //37.00     //37.00
+        public static final double frontLeftAngleOffset = Units.degreesToRadians(307.2);  //26.60    //26.71
+        public static final double frontRightAngleOffset = Units.degreesToRadians(202.1);  //111.18   //111.44
+        public static final double rearLeftAngleOffset = Units.degreesToRadians(202.6);  //108.98    //109.60
+        public static final double rearRightAngleOffset = Units.degreesToRadians(307.2);  //37.00     //37.00
     
 
         public static final int rightFlywheelMotorId = 12;
